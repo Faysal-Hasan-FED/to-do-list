@@ -7,6 +7,11 @@ document.getElementById("add-button").addEventListener('click', function () {
     if (inputFieldText != '') {
         li.innerText = inputFieldText;
         listContainer.appendChild(li);
+        const totalTask = document.getElementById("total-task");
+        totalTaskText = totalTask.innerText;
+        let totalTaskNumber = parseInt(totalTaskText);
+        totalTaskNumber++;
+        totalTask.innerText = totalTaskNumber;
     }
     else {
         alert("Please Enter Something");
