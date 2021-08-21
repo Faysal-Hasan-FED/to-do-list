@@ -12,10 +12,17 @@ document.getElementById("add-button").addEventListener('click', function () {
         let totalTaskNumber = parseInt(totalTaskText);
         totalTaskNumber++;
         totalTask.innerText = totalTaskNumber;
-    }
-    else {
-        alert("Please Enter Something");
-    }
 
+        // add korle tarpor click korlei delete hoe jabe 
+
+        const items = document.getElementsByClassName("item");
+        for (const item of items) {
+            item.addEventListener('click', function (event) {
+                event.target.parentNode.removeChild(event.target);
+                totalTaskNumber--;
+                totalTask.innerText = totalTaskNumber;
+            })
+        }
+    }
     inputField.value = '';
 })
